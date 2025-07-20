@@ -7,19 +7,27 @@
 //For example: fibonacciRecursive(6) should return 8
 
 
-function fibonacciIterative(n){
-    let arr = [0, 1];
-    for (let i = 2; i < n + 1; i++){
-      arr.push(arr[i - 2] + arr[i -1]);
-    }
-   return arr[n];
+function fibonacciIterative(n) {
+  let arr = [0, 1];
+  console.log(`Start: arr = [0, 1]`);
+
+  for (let i = 2; i <= n; i++) {
+    const next = arr[i - 2] + arr[i - 1];
+    arr.push(next);
+    console.log(`i=${i}: arr[${i - 2}] + arr[${i - 1}] = ${arr[i - 2]} + ${arr[i - 1]} = ${next}`);
   }
+
+  console.log(`Result: F(${n}) = ${arr[n]}`);
+  return arr[n];
+}
+
   fibonacciIterative(3);
   
   function fibonacciRecursive(n) {
     if (n < 2){
       return n;
     }
+    // console.log(`fibonacciRecursive(${n} - 1) + fibonacciRecursive (${n} - 2)`);
     return fibonacciRecursive(n - 1) + fibonacciRecursive (n - 2)
   }
   

@@ -30,7 +30,7 @@
 
 function factorial(n: number): number {
 
-  if (n == 1) {
+  if (n === 0 || n === 1) {
     console.log(`📥 Calling factorial(${n})`);
     return 1;
   }
